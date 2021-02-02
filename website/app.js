@@ -75,9 +75,9 @@ const updateUI = async () => {
     console.log(updateData);
 
     // update UI elements
-    date.textContent = `The date is : ${updateData.date}`;
-    temp.textContent = `Temperature is : ${updateData.temp}`;
-    content.textContent = `Your feeling : ${updateData.content}`;
+    date.innerHTML = `The date is : ${updateData.date}`;
+    temp.innerHTML = `Temperature is : ${updateData.temp}`;
+    content.innerHTML = `Your feeling : ${updateData.content}`;
   } catch (error) {
     console.log(`error : ${error}`);
   }

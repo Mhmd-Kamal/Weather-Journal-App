@@ -5,8 +5,8 @@ body {
 
 #app {
   display: grid;
-  grid-auto-rows: minmax(150px, auto);
-  /* grid-template-columns:  */
+  grid-auto-rows: 1fr 1.5fr 4fr;
+  grid-template-columns: repeat(2, 1fr);
   height: 100vh;
   background: #f23557;
   color: #f0d43a;
@@ -21,8 +21,19 @@ body {
 
 .entry {
   background: rgba(59, 74, 107, 0.4);
+  /* width: max-content;
+  height: max-content; */
+  grid-row: 3/4;
+  grid-column: 2/3;
+  /* align-self: center; */
 }
-
+.feel {
+  grid-row: 2/4;
+}
+.zip {
+  grid-row: 2/3;
+  grid-column: 2/3;
+}
 #entryHolder {
 }
 
@@ -36,6 +47,10 @@ body {
 }
 
 .headline {
+  grid-column: 1/-1;
+  text-align: center;
+  margin: auto;
+  font-size: 3.5rem;
 }
 .title {
 }
