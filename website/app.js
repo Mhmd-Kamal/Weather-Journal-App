@@ -7,7 +7,7 @@ const content = document.querySelector("#content");
 // Create a new date instance dynamically with JS
 
 let d = new Date();
-let newDate = d.getMonth() + "." + d.getDate() + "." + d.getFullYear();
+let newDate = d.getMonth() + 1 + "." + d.getDate() + "." + d.getFullYear();
 
 document.getElementById("generate").addEventListener("click", buttonAction);
 
@@ -17,7 +17,7 @@ function buttonAction(event) {
   const zipCode = document.querySelector("#zip").value;
   const feelings = document.querySelector("#feelings").value;
   // API variables
-  const APIKey = "88389d0d537c611566de0fee295f2a98";
+  const APIKey = "88389d0d537c611566de0fee295f2a98&units=metric";
   const url = `http://api.openweathermap.org/data/2.5/weather?zip=${zipCode},us&appid=${APIKey}`;
 
   /*** dynamic UI update ***/
@@ -76,7 +76,7 @@ const updateUI = async () => {
 
     // update UI elements
     date.innerHTML = `The date is : ${updateData.date}`;
-    temp.innerHTML = `Temperature is : ${updateData.temp}`;
+    temp.innerHTML = `Temperature is : ${updateData.temp} &#176;C`;
     content.innerHTML = `Your feeling : ${updateData.content}`;
   } catch (error) {
     console.log(`error : ${error}`);
